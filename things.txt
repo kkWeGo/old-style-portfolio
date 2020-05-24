@@ -1,0 +1,24 @@
+ 
+    componentWillMount(){
+        /* Create reference to messages in Firebase Database */
+        let messagesRef = fire.database().ref('messages').orderByKey().limitToLast(100);
+        messagesRef.on('child_added', snapshot => {
+            /* Update React state when message is added at Firebase Database */
+              let message = { text: snapshot.val(), id: snapshot.key };
+              this.setState({ messages: [message].concat(this.state.messages) });
+        })
+    }
+    addMessage(){
+        onClick={this.addMessage}
+        db.collection("users").add({
+            first: "Ada",
+            last: "Lovelace",
+            born: 1815
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+    }

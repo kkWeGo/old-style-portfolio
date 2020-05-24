@@ -1,0 +1,25 @@
+html{
+    font-size: 8px;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    color: rgb(56, 56, 56);
+}
+::-webkit-scrollbar {
+    display: none;
+}
+@keyframes arrowdown{
+    from {
+        top: 80%;
+        opacity: 1;
+    }
+
+    75% {
+        top: 85%;
+        opacity: 1;
+    }
+
+    to {
+        top: 85%;
+        opacity: 0;
+    }
+}
